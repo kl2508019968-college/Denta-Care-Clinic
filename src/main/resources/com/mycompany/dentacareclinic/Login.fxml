@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="485.0" prefWidth="535.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.dentacareclinic.LoginController">
+   <children>
+      <VBox layoutY="-3.0" prefHeight="494.0" prefWidth="535.0" spacing="18.0">
+         <padding>
+            <Insets bottom="30.0" left="35.0" right="35.0" top="20.0" />
+         </padding>
+         <children>
+            <VBox alignment="CENTER" prefHeight="469.0" prefWidth="465.0" spacing="12.0" styleClass="card">
+               <children>
+                  <!-- HEADER WITH LEFT TOOTH IMAGE AND DENTACARE LABEL -->
+                  <HBox alignment="CENTER" spacing="10.0">
+                     <children>
+                        <ImageView fitHeight="42.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@tooth_left.png" />
+                           </image>
+                        </ImageView>
+                        <Label style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: #0066CC;" text="DentaCare" />
+                     </children>
+                  </HBox>
+
+                  <Text fill="#0653c7" strokeType="OUTSIDE" strokeWidth="0.0" text="Clinic Appointment System" textAlignment="CENTER" wrappingWidth="200.0">
+                     <font>
+                        <Font name="Bell MT Bold" size="14.0" />
+                     </font>
+                  </Text>
+                  
+                  <Label text="Username" />
+                  <TextField fx:id="usernameField" maxWidth="220.0" />
+                  
+                  <Label text="Password" />
+                  <PasswordField fx:id="passwordField" maxWidth="220.0" />
+                  
+                  <!-- LOGIN BUTTON (MATCHED COLOR TO REGISTER BUTTON) -->
+                  <Button mnemonicParsing="false" onAction="#handleLogin" prefWidth="180.0" style="-fx-background-color: #0088cc; -fx-text-fill: white; -fx-font-weight: bold;" text="Login" />
+                  
+                  <Label style="-fx-font-size: 11px;" text="New staff member?" />
+                  <Button onAction="#openAdminRegistration" style="-fx-background-color: #0088cc; -fx-text-fill: white; -fx-font-weight: bold;" text="Register New Admin" />
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="408.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.dentacareclinic.DentalServicesController">
+   <children>
+      <VBox alignment="CENTER" layoutX="12.0" layoutY="15.0" prefHeight="375.0" prefWidth="427.0" spacing="30.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="DENTAL SERVICES">
+               <font>
+                  <Font name="Bell MT Bold" size="14.0" />
+               </font>
+            </Text>
+            <Label text="Select Dental Services">
+               <font>
+                  <Font name="Berlin Sans FB" size="13.0" />
+               </font>
+            </Label>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Consultation">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Text>
+                  <Label text="RM120" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="16.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tooth Extraction">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Text>
+                  <Label text="RM50" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="37.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Dental X-Ray">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Text>
+                  <Label text="RM40" />
+               </children>
+            </HBox>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="30.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="23.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Dental Cleaning">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Text>
+                        <Label text="RM80" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="General Check-Up">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Text>
+                        <Label text="RM30" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                     <children>
+                        <!-- BACK BUTTON WITH MATCHING BLUE STYLE -->
+                        <Button mnemonicParsing="false" onAction="#backToDashboard" prefWidth="120.0" style="-fx-background-color: #0088cc; -fx-text-fill: white; -fx-font-weight: bold;" text="BACK" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

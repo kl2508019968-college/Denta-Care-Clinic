@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="550.0" prefWidth="450.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.dentacareclinic.PatientRegistrationController">
+   <children>
+      <VBox alignment="TOP_CENTER" prefHeight="550.0" prefWidth="450.0" spacing="15.0">
+         <padding>
+            <Insets bottom="20.0" left="40.0" right="40.0" top="25.0" />
+         </padding>
+         <children>
+            <Label style="-fx-font-size: 20px; -fx-font-weight: bold;" text="PATIENT REGISTRATION" />
+
+            <!-- FULL NAME -->
+            <Label text="Full Name" />
+            <TextField fx:id="fullNameField" promptText="Enter full name" />
+
+            <!-- IC NUMBER -->
+            <Label text="IC Number" />
+            <TextField fx:id="icNumberField" promptText="e.g. 990101015555" />
+
+            <!-- PHONE NUMBER -->
+            <Label text="Phone Number" />
+            <TextField fx:id="phoneField" promptText="e.g. 0123456789" />
+
+            <!-- GENDER RADIO BUTTONS -->
+            <Label text="Gender" />
+            <HBox alignment="CENTER" spacing="20.0">
+               <children>
+                  <RadioButton fx:id="maleRadio" text="Male">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="genderToggleGroup" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="femaleRadio" text="Female" toggleGroup="$genderToggleGroup" />
+               </children>
+            </HBox>
+
+            <!-- DENTAL CONCERNS -->
+            <Label text="Dental Concern" />
+            <VBox alignment="CENTER_LEFT" maxWidth="200.0" spacing="8.0">
+               <children>
+                  <CheckBox fx:id="toothacheCheck" text="Toothache" />
+                  <CheckBox fx:id="toothCleaningCheck" text="Tooth Cleaning" />
+                  <CheckBox fx:id="generalCheckupCheck" text="General Check-up" />
+                  <CheckBox fx:id="toothExtractionCheck" text="Tooth Extraction" />
+               </children>
+            </VBox>
+
+            <!-- ACTION BUTTONS -->
+            <HBox alignment="CENTER" spacing="15.0">
+               <children>
+                  <Button onAction="#registerPatient" text="REGISTER" />
+                  <Button onAction="#clearFields" text="CLEAR" />
+                  <Button onAction="#backToDashboard" text="BACK" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

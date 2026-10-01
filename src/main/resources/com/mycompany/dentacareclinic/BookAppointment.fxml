@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="600.0" prefWidth="500.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.dentacareclinic.BookAppointmentController">
+   <children>
+      <VBox alignment="TOP_CENTER" prefHeight="600.0" prefWidth="500.0" spacing="12.0">
+         <padding>
+            <Insets bottom="20.0" left="40.0" right="40.0" top="20.0" />
+         </padding>
+         <children>
+            <Label style="-fx-font-size: 20px; -fx-font-weight: bold;" text="BOOK APPOINTMENT" />
+
+            <!-- PATIENT COMBOBOX -->
+            <VBox alignment="CENTER_LEFT" spacing="4.0">
+               <children>
+                  <Label text="Patient Name" />
+                  <ComboBox fx:id="patientComboBox" prefWidth="420.0" promptText="Select Patient" />
+               </children>
+            </VBox>
+
+            <!-- DENTIST COMBOBOX -->
+            <VBox alignment="CENTER_LEFT" spacing="4.0">
+               <children>
+                  <Label text="Dentist" />
+                  <ComboBox fx:id="dentistComboBox" prefWidth="420.0" promptText="Select Dentist" />
+               </children>
+            </VBox>
+
+            <!-- DATE PICKER -->
+            <VBox alignment="CENTER_LEFT" spacing="4.0">
+               <children>
+                  <Label text="Appointment Date" />
+                  <DatePicker fx:id="appointmentDatePicker" prefWidth="420.0" promptText="Select Date" />
+               </children>
+            </VBox>
+
+            <!-- APPOINTMENT TIME (RADIO BUTTONS WITH TOGGLE GROUP) -->
+            <VBox alignment="CENTER_LEFT" spacing="6.0">
+               <children>
+                  <Label text="Appointment Time" />
+                  <GridPane hgap="15.0" vgap="10.0">
+                     <children>
+                        <RadioButton fx:id="time9AM" text="9:00 AM" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="timeToggleGroup" />
+                           </toggleGroup>
+                        </RadioButton>
+                        <RadioButton fx:id="time10AM" text="10:00 AM" toggleGroup="$timeToggleGroup" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                        <RadioButton fx:id="time11AM" text="11:00 AM" toggleGroup="$timeToggleGroup" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                        <RadioButton fx:id="time2PM" text="2:00 PM" toggleGroup="$timeToggleGroup" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <RadioButton fx:id="time3PM" text="3:00 PM" toggleGroup="$timeToggleGroup" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+                        <RadioButton fx:id="time4PM" text="4:00 PM" toggleGroup="$timeToggleGroup" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                     </children>
+                     <columnConstraints>
+                        <ColumnConstraints />
+                        <ColumnConstraints />
+                        <ColumnConstraints />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints />
+                        <RowConstraints />
+                     </rowConstraints>
+                  </GridPane>
+               </children>
+            </VBox>
+
+            <!-- TREATMENT TYPES -->
+            <VBox alignment="CENTER_LEFT" spacing="6.0">
+               <children>
+                  <Label text="Treatment Type" />
+                  <GridPane hgap="15.0" vgap="8.0">
+                     <children>
+                        <CheckBox fx:id="checkupCheck" text="Check-up" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                        <CheckBox fx:id="cleaningCheck" text="Cleaning" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                        <CheckBox fx:id="extractionCheck" text="Extraction" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                        <CheckBox fx:id="consultationCheck" text="Consultation" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                     </children>
+                     <columnConstraints>
+                        <ColumnConstraints />
+                        <ColumnConstraints />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints />
+                        <RowConstraints />
+                     </rowConstraints>
+                  </GridPane>
+               </children>
+            </VBox>
+
+            <!-- BUTTONS -->
+            <HBox alignment="CENTER" spacing="15.0">
+               <children>
+                  <Button onAction="#clearFields" text="CLEAR" />
+                  <Button onAction="#bookAppointment" text="BOOK APPOINTMENT" />
+                  <Button onAction="#backToDashboard" text="BACK" />
+               </children>
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

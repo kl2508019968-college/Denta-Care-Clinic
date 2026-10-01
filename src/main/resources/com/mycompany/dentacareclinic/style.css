@@ -1,0 +1,158 @@
+/* ==========================================================================
+   GLOBAL STYLES & BACKGROUND
+   ========================================================================== */
+.root {
+    -fx-background-color: #F8FAFC; /* Soft Light Grey/Blue Canvas */
+    -fx-font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* Base Text & Header Labels */
+.text, .label {
+    -fx-fill: #334155; /* Dark Slate Grey Text */
+    -fx-text-fill: #334155;
+    -fx-font-size: 13px;
+}
+
+/* Titles and Headings */
+.title-text {
+    -fx-fill: #0F172A;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+
+/* ==========================================================================
+   BUTTONS
+   ========================================================================== */
+.button {
+    -fx-background-color: #0284C7; /* Modern Healthcare Cyan-Blue */
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 6px;
+    -fx-padding: 8px 16px;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: #0369A1; /* Darker Cyan-Blue */
+}
+
+.button:pressed {
+    -fx-background-color: #075985;
+}
+
+/* Red Danger Button Class (Logout / Delete / Cancel) */
+.button-danger {
+    -fx-background-color: #EF4444;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-weight: bold;
+    -fx-background-radius: 6px;
+    -fx-padding: 8px 16px;
+    -fx-cursor: hand;
+}
+
+.button-danger:hover {
+    -fx-background-color: #DC2626;
+}
+
+/* ==========================================================================
+   TEXT INPUTS (TextField & PasswordField)
+   ========================================================================== */
+.text-field, .password-field {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #CBD5E1; /* Subtle Grey Border */
+    -fx-border-radius: 6px;
+    -fx-background-radius: 6px;
+    -fx-padding: 7px 10px;
+    -fx-text-fill: #1E293B;
+}
+
+.text-field:focused, .password-field:focused {
+    -fx-border-color: #0284C7; /* Active Primary Blue Glow */
+    -fx-border-width: 1.5px;
+}
+
+/* ==========================================================================
+   SELECTION CONTROLS (ComboBox & DatePicker)
+   ========================================================================== */
+.radio-button, .check-box {
+    -fx-text-fill: #334155;
+}
+
+.radio-button .radio, .check-box .box {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #0284C7;
+    -fx-border-radius: 3px;
+}
+
+.combo-box, .date-picker {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #CBD5E1;
+    -fx-border-radius: 6px;
+    -fx-background-radius: 6px;
+}
+
+.combo-box:focused, .date-picker:focused {
+    -fx-border-color: #0284C7;
+}
+
+/* ==========================================================================
+   TABLE VIEW (Dashboard & Appointment List)
+   ========================================================================== */
+.table-view {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #E2E8F0;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.03), 5, 0, 0, 2);
+}
+
+/* Table Header */
+.table-view .column-header-background {
+    -fx-background-color: #0284C7;
+}
+
+.table-view .column-header {
+    -fx-background-color: transparent;
+    -fx-size: 35px;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: #FFFFFF;
+    -fx-font-weight: bold;
+    -fx-alignment: CENTER-LEFT;
+}
+
+/* Table Rows */
+.table-row-cell:odd {
+    -fx-background-color: #F8FAFC;
+}
+
+.table-row-cell:even {
+    -fx-background-color: #FFFFFF;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #E0F2FE; /* Soft Light Blue Highlight */
+}
+
+.table-row-cell:selected .text {
+    -fx-fill: #0369A1;
+    -fx-font-weight: bold;
+}
+
+/* ==========================================================================
+   DASHBOARD METRIC CARDS
+   ========================================================================== */
+.card {
+    -fx-background-color: #FFFFFF;
+    -fx-padding: 15px;
+    -fx-background-radius: 10px;
+    -fx-border-color: #E2E8F0;
+    -fx-border-radius: 10px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 8, 0, 0, 3);
+}
+
+.card:hover {
+    -fx-border-color: #38BDF8;
+}

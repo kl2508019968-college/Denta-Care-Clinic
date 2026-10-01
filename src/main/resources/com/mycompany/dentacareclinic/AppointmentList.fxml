@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="550.0" prefWidth="679.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.dentacareclinic.AppointmentListController">
+    <children>
+        <VBox alignment="TOP_CENTER" prefHeight="550.0" prefWidth="670.0" spacing="15.0">
+            <padding>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+            </padding>
+            <children>
+                <Label style="-fx-font-size: 20px; -fx-font-weight: bold;" text="APPOINTMENT MANAGEMENT" />
+
+                <!-- SEARCH BAR -->
+                <HBox alignment="CENTER" spacing="10.0">
+                    <children>
+                        <Label text="Search Patient" />
+                        <TextField fx:id="searchField" prefWidth="250.0" promptText="Enter patient name..." />
+                        <Button onAction="#searchAppointment" text="Search" />
+                    </children>
+                </HBox>
+
+                <!-- APPOINTMENT TABLEVIEW -->
+                <TableView fx:id="appointmentTable" prefHeight="300.0" prefWidth="560.0">
+                    <columns>
+                        <TableColumn fx:id="colPatient" prefWidth="130.0" text="Patient" />
+                        <TableColumn fx:id="colDate" prefWidth="100.0" text="Date" />
+                        <TableColumn fx:id="colTime" prefWidth="118.44451904296875" text="Time" />
+                        <TableColumn fx:id="colDentist" prefWidth="157.55545043945312" text="Dentist" />
+                        <TableColumn fx:id="colStatus" prefWidth="122.0" text="Status" />
+                    </columns>
+                </TableView>
+
+                <!-- ACTION BUTTONS -->
+                <HBox alignment="CENTER" spacing="12.0">
+                    <children>
+                        <Button onAction="#markAsCompleted" text="MARK COMPLETED" />
+                        <Button onAction="#editAppointment" text="RESCHEDULE / EDIT" />
+                        <Button onAction="#cancelAppointment" text="CANCEL" />
+                        <Button onAction="#deleteAppointment" styleClass="button-danger" text="DELETE" />
+                        <Button onAction="#backToDashboard" text="BACK" />
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

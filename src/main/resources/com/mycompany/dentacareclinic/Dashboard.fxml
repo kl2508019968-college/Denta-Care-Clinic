@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="650.0" prefWidth="914.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.dentacareclinic.DashboardController">
+
+    <!-- TOP BAR (HEADER WITH LEFTSIDE AND RIGHTSIDE TEETH LOGOS) -->
+    <top>
+        <HBox alignment="CENTER_LEFT" prefHeight="65.0" prefWidth="914.0" style="-fx-background-color: #F8FAFC; -fx-border-color: #E2E8F0; -fx-border-width: 0 0 1 0;" BorderPane.alignment="CENTER">
+            <children>
+                <!-- LEFT BRANDING BOX -->
+                <HBox alignment="CENTER_LEFT" prefHeight="65.0" prefWidth="220.0" spacing="10.0" style="-fx-background-color: #EEF2FF; -fx-padding: 10;">
+                    <children>
+                        <!-- Left Tooth Icon -->
+                        <ImageView fitHeight="38.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@tooth_left.png" />
+                            </image>
+                        </ImageView>
+                        <VBox alignment="CENTER_LEFT" spacing="0.0">
+                            <children>
+                                <Label text="DentaCare" textFill="#00A8FF">
+                                    <font>
+                                        <Font name="System Bold Italic" size="18.0" />
+                                    </font>
+                                </Label>
+                                <Label text="Assistant App" textFill="#4B5563">
+                                    <font>
+                                        <Font size="11.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+
+                <!-- HEADER CENTER & RIGHT TITLE AREA -->
+                <HBox alignment="CENTER_LEFT" prefHeight="65.0" spacing="10.0" style="-fx-padding: 0 20 0 20;" HBox.hgrow="ALWAYS">
+                    <children>
+                        <!-- Section Icon -->
+                        <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@appointment_icon.png" />
+                            </image>
+                        </ImageView>
+
+                        <!-- Changed text to Appointment's -->
+                        <Label text="Appointment's" textFill="#2563EB">
+                            <font>
+                                <Font name="System Bold" size="20.0" />
+                            </font>
+                        </Label>
+
+                        <Region HBox.hgrow="ALWAYS" />
+
+                        <!-- Right Tooth Icon (.jpg extension) -->
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@tooth_right.jpg" />
+                            </image>
+                        </ImageView>
+                    </children>
+                </HBox>
+            </children>
+        </HBox>
+    </top>
+    
+    <!-- LEFT SIDEBAR NAVIGATION -->
+    <left>
+        <VBox prefWidth="220.0" spacing="15.0" style="-fx-background-color: #F4F6F9; -fx-padding: 20;">
+            <children>
+                <!-- NAVIGATION BUTTONS -->
+                <VBox spacing="10.0" style="-fx-padding: 10 0 0 0;">
+                    <children>
+                        <Button maxWidth="1.7976931348623157E308" onAction="#openPatientRegistration" text="Register Patient" />
+                        <Button maxWidth="1.7976931348623157E308" onAction="#openBookAppointment" text="Book Appointment" />
+                        <Button maxWidth="1.7976931348623157E308" onAction="#openAppointmentList" text="Appointment List" />
+                        <Button maxWidth="1.7976931348623157E308" onAction="#openDentalServices" text="Services &amp; Prices" />
+                    </children>
+                </VBox>
+
+                <Separator prefWidth="180.0" />
+
+                <!-- CLINIC INFO CARD -->
+                <VBox spacing="5.0" style="-fx-background-color: #FFFFFF; -fx-padding: 10; -fx-background-radius: 8; -fx-border-color: #E0E0E0; -fx-border-radius: 8;">
+                    <children>
+                        <Label style="-fx-font-weight: bold; -fx-font-size: 11px; -fx-text-fill: #333333;" text="CLINIC HOURS" />
+                        <Label style="-fx-font-size: 10px; -fx-text-fill: #555555;" text="Mon - Sat: 9:00 AM - 6:00 PM" />
+                        <Label style="-fx-font-size: 10px; -fx-text-fill: #555555;" text="Sun: Closed" />
+                        
+                        <Separator prefWidth="160.0" style="-fx-padding: 3 0 3 0;" />
+                        
+                        <Label style="-fx-font-weight: bold; -fx-font-size: 11px; -fx-text-fill: #333333;" text="EMERGENCY LINE" />
+                        <Label style="-fx-font-size: 10px; -fx-text-fill: #0066CC; -fx-font-weight: bold;" text="+60 12-345 6789" />
+                    </children>
+                </VBox>
+
+                <!-- ADMIN PROFILE & LOGOUT SECTION -->
+                <VBox alignment="BOTTOM_CENTER" spacing="8.0" VBox.vgrow="ALWAYS">
+                    <children>
+                        <Label style="-fx-font-size: 11px; -fx-font-weight: bold; -fx-text-fill: #555555;" text="Logged in as: Admin" />
+                        <Button maxWidth="1.7976931348623157E308" onAction="#handleLogout" style="-fx-background-color: #D9534F; -fx-text-fill: white; -fx-font-weight: bold;" text="LOGOUT" />
+                    </children>
+                </VBox>
+            </children>
+        </VBox>
+    </left>
+
+    <!-- CENTER MAIN CONTENT AREA -->
+    <center>
+        <VBox spacing="20.0" style="-fx-padding: 20;">
+            <children>
+                <!-- TOP STATS CARDS -->
+                <HBox spacing="15.0">
+                    <children>
+                        <VBox alignment="CENTER" prefHeight="80.0" prefWidth="180.0" styleClass="card">
+                            <children>
+                                <Label fx:id="todayAppointmentsLabel" style="-fx-font-size: 24px; -fx-font-weight: bold;" text="0" />
+                                <Label text="Totals Appointments" />
+                            </children>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="80.0" prefWidth="180.0" styleClass="card">
+                            <children>
+                                <Label fx:id="totalPatientsLabel" style="-fx-font-size: 24px; -fx-font-weight: bold;" text="0" />
+                                <Label text="Total Registered Patients" />
+                            </children>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="80.0" prefWidth="181.0" styleClass="card">
+                            <children>
+                                <Label fx:id="completedAppointmentsLabel" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="0" />
+                                <Label text="Completed Appointments" />
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+
+                <!-- SEARCH BAR & TABLE -->
+                <HBox spacing="10.0">
+                    <children>
+                        <TextField fx:id="searchField" prefWidth="250.0" promptText="Search patient name or IC..." />
+                        <Button fx:id="searchPatient" onAction="#searchPatient" text="Search" />
+                    </children>
+                </HBox>
+
+                <TableView fx:id="patientTable" prefHeight="350.0" prefWidth="650.0">
+                    <columns>
+                        <TableColumn fx:id="colId" prefWidth="60.0" text="ID" />
+                        <TableColumn fx:id="colName" prefWidth="183.0" text="Patient Name" />
+                        <TableColumn fx:id="colIc" prefWidth="147.0" text="IC Number" />
+                        <TableColumn fx:id="colPhone" prefWidth="137.0" text="Phone" />
+                        <TableColumn fx:id="colGender" prefWidth="127.0" text="Gender" />
+                    </columns>
+                </TableView>
+            </children>
+        </VBox>
+    </center>
+</BorderPane>
